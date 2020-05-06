@@ -18,13 +18,7 @@ class Parler(commands.Cog):
         miaous = ['Miaouuu :smiley_cat:', 'Miaou !', 'Miaouuuu (j\'ai faim !)', 'Miaou :heart_eyes_cat:', 'Zzzz...']
         await ctx.send(f'{random.choice(miaous)}')
 
-    @commands.command(aliases=['infos', 'author'])
-    async def about(self, ctx):
-        await ctx.send('Je suis Bariola, une chatte calico âgée de 4 ans. '
-                       'Mon nom vient du mot « bariolé » qui signifie « coloré de tons vifs et variés ».\n'
-                       'La version numérique de ma personne a été créée par Antoine Després, un étudiant en 1re année '
-                       'de DUT Informatique ! '
-                       '\nRegarde ses autres créations sur : https://github.com/antoinedespres')
+
 
     @commands.command(aliases=['answer', 'reponds', 'réponds'])
     async def question(self, ctx, *, question):

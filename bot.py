@@ -31,7 +31,7 @@ async def on_message(self, message):
         return  # ignore messages from other bots
 
     if message.author.id in self.blacklisted_users:
-        return
+        return # not yet implemented
 
     if message.guild is None:
         return  # ignore private messages
