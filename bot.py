@@ -8,18 +8,22 @@ client = commands.Bot(command_prefix='.')
 client.remove_command('help')
 
 status = cycle(['manger des croquettes',
+                'boire de l\'eau',
+                'se promener',
+                'dormir',
                 'faire ses griffes',
                 'faire la sieste',
                 'espionner son maître',
                 'regarder la télé',
                 'miauler',
+                'faire sa toilette',
                 'ne rien faire'])
 
 
 @client.event
 async def on_ready():
     change_status.start()
-    print('Le bot est prêt.')
+    print('Je suis prête !')
 
 
 async def on_message(self, message):

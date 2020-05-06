@@ -22,7 +22,8 @@ class HelpCommands(commands.Cog):
         embed.add_field(name='.nourrir', value='Pour me donner à manger !.', inline=False)
         embed.add_field(name='.question', value='Je réponds à une question fermée (Oui / Non).', inline=False)
         embed.add_field(name='.cute', value='Une phrase gentille pour te réconforter !', inline=False)
-        embed.add_field(name='.about', value='Quelques infos sur le créateur de ce bot !', inline=False)
+        embed.add_field(name='.cute', value='Une phrase... pas gentille.', inline=False)
+        embed.add_field(name='.about', value='Quelques infos sur le créateur de ce bot et moi-même !', inline=False)
         
         await author.send(embed=embed)
         await ctx.send("MP envoyé :smile_cat: !")
