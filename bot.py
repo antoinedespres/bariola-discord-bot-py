@@ -4,7 +4,7 @@ import os
 from discord.ext import commands, tasks
 from itertools import cycle
 
-client = commands.Bot(command_prefix='.')
+client = commands.Bot(command_prefix='$')
 client.remove_command('help')
 
 status = cycle(['manger des croquettes',

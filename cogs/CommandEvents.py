@@ -8,7 +8,7 @@ class CommandEvents(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
         #if isinstance(error, commands.CommandNotFound):
-        #    await ctx.send('Commande inexistante !')
+        #    await ctx.send('Commande inexistante')
         if isinstance(error,commands.MissingRequiredArgument):
             await ctx.send('Il manque un ou plusieurs arguments :pouting_cat: !')
 
