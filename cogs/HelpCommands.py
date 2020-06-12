@@ -14,27 +14,29 @@ class HelpCommands(commands.Cog):
             colour=discord.Colour.dark_orange()
         )
 
-        embed.set_author(name='Ce que je sais faire')
-        embed.add_field(name='.ping', value='Renvoie « Pong ! » avec le temps de latence.', inline=False)
-        embed.add_field(name='.miaou', value='Miaouuu !', inline=False)
-        embed.add_field(name='.random x y', value='Génère un nombre aléatoire entre x et y inclus.', inline=False)
-        embed.add_field(name='.fact', value='Envoie un fait intéressant sur les chats.', inline=False)
-        embed.add_field(name='.nourrir', value='Pour me donner à manger !.', inline=False)
-        embed.add_field(name='.question', value='Je réponds à une question fermée (Oui / Non).', inline=False)
-        embed.add_field(name='.cute', value='Une phrase gentille pour te réconforter !', inline=False)
-        embed.add_field(name='.cute', value='Une phrase... pas gentille.', inline=False)
-        embed.add_field(name='.about', value='Quelques infos sur le créateur de ce bot et moi-même !', inline=False)
+        embed.set_author(name='What I can do')
+        embed.add_field(name='$ping', value='Sends "Pong"!" with latency.', inline=False)
+        embed.add_field(name='$meow', value='Meowww!', inline=False)
+        embed.add_field(name='$random x y', value='Generates a random number between x and y inclusive.', inline=False)
+        embed.add_field(name='$fact', value='Sends an interesting fact about cats.', inline=False)
+        embed.add_field(name='$feed', value='I\'m hungry!!!', inline=False)
+        embed.add_field(name='$question', value='I answer a closed question (Yes / No).', inline=False)
+        embed.add_field(name='$cute', value='A kind phrase to cheer you up!', inline=False)
+        embed.add_field(name='$notcute', value='An... unkind phrase.', inline=False)
+        embed.add_field(name='$discord', value='Join the community on the official Bariola server!', inline=False)
+        embed.add_field(name='$about', value='Some information about the creator of this bot and myself!', inline=False)
 
         await author.send(embed=embed)
-        await ctx.send("MP envoyé :smile_cat: !")
+        await ctx.send("PM sent :smile_cat:!")
 
-    @commands.command(aliases=['infos', 'author'])
+    @commands.command(aliases=['info', 'author'])
     async def about(self, ctx):
-        await ctx.send('Je suis Bariola, une chatte calico âgée de 4 ans. '
-                       'Mon nom vient du mot « bariolé » qui signifie « coloré de tons vifs et variés ».\n'
-                       'La version numérique de ma personne a été créée par Antoine Després, un étudiant en 1re année '
-                       'de DUT Informatique ! '
-                       '\nRegarde ses autres créations sur : https://github.com/antoinedespres')
+        await ctx.send('I\'m Bariola, a four-year-old calico cat.'
+                       'My name comes from the word "bariolé" (French) which means "coloured in bright and varied '
+                       'tones".\n'
+                       'The digital version of me was created by Antoine Després, a 1st year student'
+                       ' of DUT diploma in Computer Science.'
+                       '\nCheck out his other creations on:  https://github.com/antoinedespres')
 
 
 def setup(bot):

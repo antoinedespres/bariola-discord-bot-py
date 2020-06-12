@@ -7,16 +7,16 @@ from itertools import cycle
 client = commands.Bot(command_prefix='$')
 client.remove_command('help')
 
-status = cycle(['manger des croquettes',
-                'boire de l\'eau',
-                'se promener',
+status = cycle(['eating kibbles',
+                'drinking water',
+                'walking around',
                 'sleeping',
-                'faire ses griffes',
-                'faire la sieste',
-                'espionner son maître',
+                'doing its claws',
+                'napping',
+                'spying on its owner',
                 'watching TV',
-                'miauler',
-                'faire sa toilette',
+                'meowing',
+                'grooming',
                 'doing nothing'])
 
 
@@ -44,10 +44,10 @@ async def change_status():
 
 @client.command()
 async def ping(ctx):
-    await ctx.send(f':ping_pong: Pong ! J\'ai réagi en {round(client.latency * 1000)} ms')
+    await ctx.send(f':ping_pong: Pong! I reacted in {round(client.latency * 1000)} ms.')
 
 
-extensions = ['cogs.CommandEvents', 'cogs.HelpCommands', 'cogs.Parler']
+extensions = ['cogs.CommandEvents', 'cogs.HelpCommands', 'cogs.Talk']
 
 if __name__ == '__main__':
     for ext in extensions:
