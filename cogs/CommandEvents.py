@@ -7,14 +7,14 @@ class CommandEvents(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
-        #if isinstance(error, commands.CommandNotFound):
-        #    await ctx.send('Commande inexistante')
+        if isinstance(error, commands.CommandNotFound):
+            await ctx.send('Command does not exist!')
         if isinstance(error,commands.MissingRequiredArgument):
-            await ctx.send('Il manque un ou plusieurs arguments :pouting_cat: !')
+            await ctx.send('One or several arguments missing :pouting_cat:!')
 
     @commands.Cog.listener()
     async def on_command_completion(self, ctx):
-        print(ctx.command.name + " appelée avec succès.")
+        print(ctx.command.name + " called successfully.")
 
 
 def setup(bot):

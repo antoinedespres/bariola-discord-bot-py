@@ -11,43 +11,41 @@ class Parler(commands.Cog):
     async def on_member_join(self, member):
         channel = member.guild.system_channel
         if channel is not None:
-            await channel.send('Miaou, {0.mention} !'.format(member))
+            await channel.send('Meow, {0.mention}!'.format(member))
 
     @commands.command(aliases=['miauler', 'meow'])
     async def miaou(self, ctx):
-        miaous = ['Miaouuu :smiley_cat:', 'Miaou !', 'Miaouuuu (j\'ai faim !)', 'Miaou :heart_eyes_cat:', 'Zzzz...']
-        await ctx.send(f'{random.choice(miaous)}')
-
-
+        meows = ['Miaouuu :smiley_cat:', 'Miaou !', 'Miaouuuu (I\'m hungry!)', 'Miaou :heart_eyes_cat:', 'Zzz...']
+        await ctx.send(f'{random.choice(meows)}')
 
     @commands.command(aliases=['answer', 'reponds', 'réponds'])
     async def question(self, ctx, *, question):
-        responses = ['Tu rêves...',
-                     'C\'est sûr !',
-                     'Oui.',
-                     'Bien sûr !',
-                     'Mais oui c\'est clair !',
-                     'Non.',
-                     'Arrête tes bêtises et vas bosser !',
-                     'Absolument pas',
-                     'Pas du tout'
-                     'Évidemment !',
-                     'Peut-être, peut-être pas...',
-                     'M\'en fous j\'ai faim moi.',
-                     'FAKE NEWS!',
-                     'Je sais pas, je ne suis qu\'un chat.']
+        answers = ['Tu rêves...',
+                   'C\'est sûr !',
+                   'Yes.',
+                   'Of course!',
+                   'Mais oui c\'est clair !',
+                   'No.',
+                   'Go back to work!',
+                   'Absolument pas',
+                   'Not at all.'
+                   'Évidemment !',
+                   'Maybe, maybe not...',
+                   'M\'en fous j\'ai faim moi.',
+                   'FAKE NEWS!',
+                   'Je sais pas, je ne suis qu\'un chat.']
 
-        await ctx.send(f'Question : {question}\n\nRéponse : {random.choice(responses)}')
+        await ctx.send(f'Question: {question}\n\nAnswer: {random.choice(answers)}')
 
-    @commands.command(aliases=['manger', 'feed', 'bouffer'])
-    async def nourrir(self, ctx):
-        nourrir = ['C\'était pas bon grrrr :pouting_cat:',
-                   'Miam ! :joy_cat:',
-                   'Mouais, ça remplit juste...',
-                   'J\'aime bien :smile_cat: !',
-                   'Délicieux :kissing_cat: !',
-                   'Cest trop bon :heart_eyes_cat: !']
-        await ctx.send(f'Mon avis : {random.choice(nourrir)}')
+    @commands.command(aliases=['manger', 'nourrir', 'bouffer'])
+    async def feed(self, ctx):
+        feed = ['C\'était pas bon grrrr :pouting_cat:',
+                'Miam ! :joy_cat:',
+                'Mouais, ça remplit juste...',
+                'J\'aime bien :smile_cat: !',
+                'Délicieux :kissing_cat: !',
+                'Cest trop bon :heart_eyes_cat: !']
+        await ctx.send(f'Mon avis : {random.choice(feed)}')
 
     @commands.command()
     async def cute(self, ctx):
@@ -87,7 +85,7 @@ class Parler(commands.Cog):
     @commands.command()
     async def random(self, ctx, nb1, nb2):
         result = random.randrange(int(nb1), (int(nb2) + 1), 1)
-        await ctx.send(f'Résultat : {result}')
+        await ctx.send(f'Result: {result}')
 
 
 def setup(bot):

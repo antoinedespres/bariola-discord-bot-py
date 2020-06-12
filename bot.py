@@ -10,20 +10,20 @@ client.remove_command('help')
 status = cycle(['manger des croquettes',
                 'boire de l\'eau',
                 'se promener',
-                'dormir',
+                'sleeping',
                 'faire ses griffes',
                 'faire la sieste',
                 'espionner son maître',
-                'regarder la télé',
+                'watching TV',
                 'miauler',
                 'faire sa toilette',
-                'ne rien faire'])
+                'doing nothing'])
 
 
 @client.event
 async def on_ready():
     change_status.start()
-    print('Je suis prête !')
+    print('I\'m ready!')
 
 
 async def on_message(self, message):
@@ -31,7 +31,7 @@ async def on_message(self, message):
         return  # ignore messages from other bots
 
     if message.author.id in self.blacklisted_users:
-        return # not yet implemented
+        return  # not yet implemented
 
     if message.guild is None:
         return  # ignore private messages
@@ -53,4 +53,4 @@ if __name__ == '__main__':
     for ext in extensions:
         client.load_extension(ext)
 
-client.run(os.environ['TOKEN'])
+client.run(os.environ['BOT_TOKEN_PY'])
