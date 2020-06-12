@@ -90,7 +90,7 @@ class Talk(commands.Cog):
         await ctx.send(f'Result: {result}')
 
     @commands.command()
-    async def discord(self, ctx, nb1, nb2):
+    async def discord(self, ctx):
         await ctx.send('Join us! https://discord.gg/tzt7Gx2 :smile_cat:')
 
 
