@@ -5,6 +5,7 @@ from discord.ext import commands
 class HelpCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self._last_member = None
 
     @commands.command(pass_context=True)
     async def help(self, ctx):

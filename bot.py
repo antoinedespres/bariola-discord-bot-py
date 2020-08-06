@@ -1,3 +1,4 @@
+import json
 import discord
 import os
 
@@ -6,6 +7,11 @@ from itertools import cycle
 
 client = commands.Bot(command_prefix='$')
 client.remove_command('help')
+
+warnings = {}
+
+with open('warnings.json', 'r') as infile:
+    warnings = json.load(infile)
 
 status = cycle(['eating kibbles',
                 'drinking water',
@@ -40,6 +46,36 @@ async def on_message(self, message):
 @tasks.loop(minutes=15)
 async def change_status():
     await client.change_presence(activity=discord.Game(next(status)))
+
+
+# warning and auto-kick
+@client.command()
+@commands.has_permissions(administrator=True)
+async def warning(ctx, warnedMember: discord.Member):
+    pseudo = warnedMember.mention
+    memberID = warnedMember.id
+
+    if memberID not in warnings:
+        warnings[memberID] = 0
+        print("This member has no warning")
+
+    warnings[memberID] += 1
+    print("Added warning", warnings[memberID], "/3")
+
+    if warnings[memberID] == 3:
+        warnings[memberID] = 0
+        await warnedMember.send("You have been kicked of the server because of too many warnings. Meow :pouting_cat:!")
+        await warnedMember.kick()
+
+    with open('warnings.json', 'w') as outfile:
+        json.dump(warnings, outfile)
+
+    await ctx.send(f"Member {pseudo} has received a warning! Beware :pouting_cat:!")
+
+
+@warning.error
+async def on_command_error(ctx, error):
+    await ctx.send(error)
 
 
 @client.command()

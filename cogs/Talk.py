@@ -18,7 +18,7 @@ class Talk(commands.Cog):
         meows = ['Meoowwww :smiley_cat:', 'Meow!', 'Meoooow (I\'m hungry!)', 'Meow :heart_eyes_cat:', 'Zzz...']
         await ctx.send(f'{random.choice(meows)}')
 
-    @commands.command(aliases=['answer', 'ask'])
+    @commands.command(aliases=['answer', 'ask', 'q'])
     async def question(self, ctx, *, question):
         answers = ['You\'re dreaming...',
                    'That\'s for sure.',
