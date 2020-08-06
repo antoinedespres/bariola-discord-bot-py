@@ -79,6 +79,12 @@ async def on_command_error(ctx, error):
 
 
 @client.command()
+@commands.has_permissions(administrator=True)
+async def clear(ctx, amount=5):
+    await ctx.channel.purge(limit=amount)
+
+
+@client.command()
 async def ping(ctx):
     await ctx.send(f':ping_pong: Pong! I reacted in {round(client.latency * 1000)} ms.')
 
