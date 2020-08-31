@@ -7,12 +7,6 @@ class Talk(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    @commands.Cog.listener()
-    async def on_member_join(self, member):
-        channel = member.guild.system_channel
-        if channel is not None:
-            await channel.send('Meow, {0.mention} (welcome)!'.format(member))
-
     @commands.command(aliases=['meowing', 'miaou'])
     async def meow(self, ctx):
         meows = ['Meoowwww :smiley_cat:', 'Meow!', 'Meoooow (I\'m hungry!)', 'Meow :heart_eyes_cat:', 'Zzz...']

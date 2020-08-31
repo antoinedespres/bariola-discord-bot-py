@@ -26,6 +26,7 @@ class HelpCommands(commands.Cog):
         embed.add_field(name='$notcute', value='An... unkind phrase.', inline=False)
         embed.add_field(name='$discord', value='Join the community on the official Bariola server!', inline=False)
         embed.add_field(name='$about', value='Some information about the creator of this bot and myself!', inline=False)
+        embed.add_field(name='$say', value='I\'ll repeat what you wrote!', inline=False)
 
         await author.send(embed=embed)
         await ctx.send("PM sent :smile_cat:!")
