@@ -11,23 +11,27 @@ game = cycle(['eating kibbles',
               'drinking water',
               'walking around',
               'sleeping',
-              'doing its claws',
+              'scratching the couch',
               'napping',
               'spying on its owner',
               'watching TV',
               'meowing',
-              'doing nothing'])
+              'doing nothing',
+              'preparing a birthday cake',
+              'talking with cats outside'])
 
 status = cycle([discord.Status.dnd,
                 discord.Status.online,
                 discord.Status.idle,
-                discord.Status.dnd,
+                discord.Status.idle,
                 discord.Status.online,
                 discord.Status.idle,
                 discord.Status.online,
                 discord.Status.dnd,
                 discord.Status.online,
-                discord.Status.online])
+                discord.Status.online,
+                discord.Status.dnd,
+                discord.Status.idle])
 
 
 @client.event
@@ -47,7 +51,7 @@ async def on_message(self, message):
         return  # ignore private messages
 
 
-@tasks.loop(minutes=15)
+@tasks.loop(minutes=5)
 async def change_status():
     await client.change_presence(activity=discord.Game(next(game)), status=next(status))
 
@@ -62,8 +66,7 @@ async def vc(ctx):
     channel = ctx.author.voice.channel
 
     if channel is not None:
-        membres = channel.members
-        for member in membres:
+        for member in channel.members:
             await ctx.send(member.mention)
 
 

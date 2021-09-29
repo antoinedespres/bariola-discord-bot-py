@@ -18,22 +18,22 @@ class ServerMgmt(commands.Cog):
     # the person is kicked from the server
     @commands.command()
     @commands.has_permissions(administrator=True)
-    async def warning(self, ctx, warnedMember: discord.Member):
-        pseudo = warnedMember.mention
-        memberID = warnedMember.id
+    async def warning(self, ctx, warned_member: discord.Member):
+        pseudo = warned_member.mention
+        member_id = warned_member.id
 
-        if memberID not in warnings:
-            warnings[memberID] = 0
+        if member_id not in warnings:
+            warnings[member_id] = 0
             print("This member has no warning")
 
-        warnings[memberID] += 1
-        print("Added warning", warnings[memberID], "/3")
+        warnings[member_id] += 1
+        print("Added warning", warnings[member_id], "/3")
 
-        if warnings[memberID] == 3:
-            warnings[memberID] = 0
-            await warnedMember.send(
+        if warnings[member_id] == 3:
+            warnings[member_id] = 0
+            await warned_member.send(
                 "You have been kicked of the server because of too many warnings. Meow :pouting_cat:!")
-            await warnedMember.kick()
+            await warned_member.kick()
 
         with open('warnings.json', 'w') as outfile:
             json.dump(warnings, outfile)
@@ -46,17 +46,17 @@ class ServerMgmt(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(administrator=True)
-    async def kick(self, ctx, memberToKick: discord.Member):
-        await memberToKick.send(
+    async def kick(self, ctx, member_to_kick: discord.Member):
+        await member_to_kick.send(
             "It's bad to be bad! :pouting_cat:")
-        await memberToKick.kick()
+        await member_to_kick.kick()
 
     @commands.command()
     @commands.has_permissions(administrator=True)
-    async def ban(self, ctx, memberToBan: discord.Member):
-        await memberToBan.send(
+    async def ban(self, ctx, member_to_ban: discord.Member):
+        await member_to_ban.send(
             "It's bad to be bad! :pouting_cat:")
-        await memberToBan.ban()
+        await member_to_ban.ban()
 
     @commands.command()
     @commands.has_permissions(administrator=True)
