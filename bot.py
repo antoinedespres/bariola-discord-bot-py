@@ -17,7 +17,7 @@ game = cycle(['eating kibbles',
               'watching TV',
               'meowing',
               'doing nothing',
-              'preparing a birthday cake',
+              'walking on the keyboard',
               'talking with cats outside'])
 
 status = cycle([discord.Status.dnd,
@@ -30,7 +30,7 @@ status = cycle([discord.Status.dnd,
                 discord.Status.dnd,
                 discord.Status.online,
                 discord.Status.online,
-                discord.Status.dnd,
+                discord.Status.online,
                 discord.Status.idle])
 
 
