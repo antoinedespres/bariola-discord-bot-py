@@ -4,7 +4,7 @@ import os
 from discord.ext import commands, tasks
 from itertools import cycle
 
-client = commands.Bot(command_prefix='$')
+client = commands.Bot(command_prefix=os.environ['BOT_PREFIX_PY'])
 client.remove_command('help')
 
 game = cycle(['eating kibbles',
