@@ -7,7 +7,7 @@ class HelpCommands(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def help(self, ctx):
         author = ctx.author
 
@@ -41,5 +41,5 @@ class HelpCommands(commands.Cog):
                        '\nCheck out his other creations and my source code on:  https://github.com/antoinedespres !')
 
 
-def setup(bot):
-    bot.add_cog(HelpCommands(bot))
+async def setup(bot):
+    await bot.add_cog(HelpCommands(bot))

@@ -20,5 +20,5 @@ class Greetings(commands.Cog):
             await channel.send('Goodbye, {0.mention}...'.format(member))
 
 
-def setup(bot):
-    bot.add_cog(Greetings(bot))
+async def setup(bot):
+    await bot.add_cog(Greetings(bot))

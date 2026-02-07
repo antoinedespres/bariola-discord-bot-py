@@ -18,5 +18,5 @@ class CommandEvents(commands.Cog):
         print(ctx.command.name + " successfully called by " + str(ctx.author))
 
 
-def setup(bot):
-    bot.add_cog(CommandEvents(bot))
+async def setup(bot):
+    await bot.add_cog(CommandEvents(bot))

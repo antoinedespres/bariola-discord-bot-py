@@ -72,8 +72,10 @@ class ServerMgmt(commands.Cog):
 
     @commands.command()
     async def avatar(self, ctx, *, member: discord.Member = None):
-        await ctx.send(member.avatar_url)
+        if member is None:
+            member = ctx.author
+        await ctx.send(member.display_avatar.url)
 
 
-def setup(bot):
-    bot.add_cog(ServerMgmt(bot))
+async def setup(bot):
+    await bot.add_cog(ServerMgmt(bot))

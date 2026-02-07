@@ -88,5 +88,5 @@ class Talk(commands.Cog):
         await ctx.send('Join us! https://discord.gg/tzt7Gx2 :smile_cat:')
 
 
-def setup(bot):
-    bot.add_cog(Talk(bot))
+async def setup(bot):
+    await bot.add_cog(Talk(bot))
