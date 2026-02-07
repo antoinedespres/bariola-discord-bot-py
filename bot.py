@@ -4,7 +4,13 @@ import os
 from discord.ext import commands, tasks
 from itertools import cycle
 
-client = commands.Bot(command_prefix=os.environ['BOT_PREFIX_PY'])
+# Set up intents (required for discord.py 2.x)
+intents = discord.Intents.default()
+intents.message_content = True
+intents.members = True
+intents.guilds = True
+
+client = commands.Bot(command_prefix=os.environ['BOT_PREFIX_PY'], intents=intents)
 client.remove_command('help')
 
 game = cycle(['eating kibbles',
@@ -72,8 +78,15 @@ async def vc(ctx):
 
 extensions = ['cogs.CommandEvents', 'cogs.Greetings', 'cogs.HelpCommands', 'cogs.ServerMgmt', 'cogs.Talk', 'cogs.Music']
 
-if __name__ == '__main__':
+async def load_extensions():
     for ext in extensions:
-        client.load_extension(ext)
+        await client.load_extension(ext)
 
-client.run(os.environ['BOT_TOKEN_PY'])
+async def main():
+    async with client:
+        await load_extensions()
+        await client.start(os.environ['BOT_TOKEN_PY'])
+
+if __name__ == '__main__':
+    import asyncio
+    asyncio.run(main())
