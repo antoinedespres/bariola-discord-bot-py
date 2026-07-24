@@ -94,6 +94,7 @@ extensions = [
     'cogs.server_management',
     'cogs.talk',
     'cogs.language',
+    'cogs.cat',
 ]
 
 

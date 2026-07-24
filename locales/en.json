@@ -70,5 +70,7 @@
   "language.name.en": "English",
   "language.name.fr": "Français",
   "language.name.ko": "한국어",
-  "language.set_confirmation": "Language set to {language}."
+  "language.set_confirmation": "Language set to {language}.",
+
+  "cat.fetch_error": "Couldn't fetch a cat picture right now, try again later!"
 }
