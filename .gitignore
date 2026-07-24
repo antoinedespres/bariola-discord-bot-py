@@ -1,4 +1,9 @@
 .idea/
+.claude/
 __pycache__/
+*.pyc
 venv/
+.venv/
+.env
+data/
 warnings.json

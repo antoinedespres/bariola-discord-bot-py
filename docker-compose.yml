@@ -1,0 +1,13 @@
+services:
+  # Replace "antoinedespres" with your own GitHub username/org if you fork
+  # this repo - the CI workflow pushes to ghcr.io/<owner>/<repo>.
+  bariola-bot:
+    image: ghcr.io/antoinedespres/bariola-discord-bot-py:latest
+    container_name: bariola-bot
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - bariola-data:/app/data
+
+volumes:
+  bariola-data:

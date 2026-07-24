@@ -1,17 +1,20 @@
-import discord
-import os
-
-from discord.ext import commands, tasks
+import asyncio
 from itertools import cycle
 
-# Set up intents (required for discord.py 2.x)
+import discord
+from discord.ext import commands, tasks
+
+import config
+import db
+import i18n
+
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 intents.guilds = True
 
-client = commands.Bot(command_prefix=os.environ['BOT_PREFIX_PY'], intents=intents)
-client.remove_command('help')
+bot = commands.Bot(command_prefix=config.BOT_PREFIX, intents=intents)
+bot.remove_command('help')
 
 game = cycle(['eating kibbles',
               'drinking water',
@@ -40,53 +43,74 @@ status = cycle([discord.Status.dnd,
                 discord.Status.idle])
 
 
-@client.event
+@bot.event
 async def on_ready():
     change_status.start()
     print('I\'m ready!')
 
 
-async def on_message(self, message):
-    if message.author.bot:
-        return  # ignore messages from other bots
-
-    if message.author.id in self.blacklisted_users:
-        return  # ignore message from blacklisted users
-
-    if message.guild is None:
-        return  # ignore private messages
-
-
 @tasks.loop(minutes=5)
 async def change_status():
-    await client.change_presence(activity=discord.Game(next(game)), status=next(status))
+    await bot.change_presence(activity=discord.Game(next(game)), status=next(status))
 
 
-@client.command()
+@bot.hybrid_command(description="Check Bariola's latency.")
 async def ping(ctx):
-    await ctx.send(f':ping_pong: Pong! I reacted in {round(client.latency * 1000)} ms.')
+    await ctx.send(await i18n.t_ctx(ctx, 'bot.ping.response', latency=round(bot.latency * 1000)))
 
 
-@client.command()
+@bot.hybrid_command(description="Mention everyone in your current voice channel.")
 async def vc(ctx):
-    channel = ctx.author.voice.channel
+    if ctx.author.voice is None:
+        await ctx.send(await i18n.t_ctx(ctx, 'bot.vc.not_in_voice'))
+        return
 
-    if channel is not None:
-        for member in channel.members:
-            await ctx.send(member.mention)
+    for member in ctx.author.voice.channel.members:
+        await ctx.send(member.mention)
 
 
-extensions = ['cogs.CommandEvents', 'cogs.Greetings', 'cogs.HelpCommands', 'cogs.ServerMgmt', 'cogs.Talk', 'cogs.Music']
+@bot.command()
+@commands.is_owner()
+async def sync(ctx, scope: str = None):
+    if scope == 'global':
+        synced = await bot.tree.sync()
+        await ctx.send(f'Synced {len(synced)} command(s) globally.')
+        return
+
+    if config.DEV_GUILD_ID is None:
+        await ctx.send('DEV_GUILD_ID is not set — cannot sync to a dev guild.')
+        return
+
+    guild = discord.Object(id=int(config.DEV_GUILD_ID))
+    bot.tree.copy_global_to(guild=guild)
+    synced = await bot.tree.sync(guild=guild)
+    await ctx.send(f'Synced {len(synced)} command(s) to the dev guild.')
+
+
+extensions = [
+    'cogs.command_events',
+    'cogs.greetings',
+    'cogs.misc',
+    'cogs.server_management',
+    'cogs.talk',
+    'cogs.language',
+]
+
 
 async def load_extensions():
     for ext in extensions:
-        await client.load_extension(ext)
+        await bot.load_extension(ext)
+
 
 async def main():
-    async with client:
-        await load_extensions()
-        await client.start(os.environ['BOT_TOKEN_PY'])
+    await db.init_db()
+    try:
+        async with bot:
+            await load_extensions()
+            await bot.start(config.BOT_TOKEN)
+    finally:
+        await db.close_db()
+
 
 if __name__ == '__main__':
-    import asyncio
     asyncio.run(main())
