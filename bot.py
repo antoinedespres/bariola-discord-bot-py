@@ -96,6 +96,7 @@ extensions = [
     'cogs.language',
     'cogs.cat',
     'cogs.polls',
+    'cogs.birthday',
 ]
 
 

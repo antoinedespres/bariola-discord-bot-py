@@ -74,5 +74,9 @@
 
   "cat.fetch_error": "Couldn't fetch a cat picture right now, try again later!",
 
-  "poll.invalid_options": "A poll needs between 2 and 10 options, separated by commas."
+  "poll.invalid_options": "A poll needs between 2 and 10 options, separated by commas.",
+
+  "birthday.invalid_date": "That doesn't look like a valid date!",
+  "birthday.set_confirmation": "Got it! I'll remember your birthday is on {day}/{month}.",
+  "birthday.announcement": "🎉 Happy birthday, {mention}! 🎂"
 }

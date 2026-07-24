@@ -74,5 +74,9 @@
 
   "cat.fetch_error": "지금은 고양이 사진을 가져올 수 없어요, 나중에 다시 시도해 주세요!",
 
-  "poll.invalid_options": "설문조사는 쉼표로 구분된 2개에서 10개 사이의 항목이 필요해요."
+  "poll.invalid_options": "설문조사는 쉼표로 구분된 2개에서 10개 사이의 항목이 필요해요.",
+
+  "birthday.invalid_date": "유효한 날짜가 아니에요!",
+  "birthday.set_confirmation": "알겠어요! {month}월 {day}일이 생일이라는 걸 기억할게요!",
+  "birthday.announcement": "🎉 {mention}님, 생일 축하해요! 🎂"
 }

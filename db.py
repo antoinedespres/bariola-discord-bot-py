@@ -33,6 +33,17 @@ async def init_db() -> None:
         )
         """
     )
+    await _connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS birthdays (
+            guild_id INTEGER NOT NULL,
+            user_id  INTEGER NOT NULL,
+            day      INTEGER NOT NULL,
+            month    INTEGER NOT NULL,
+            PRIMARY KEY (guild_id, user_id)
+        )
+        """
+    )
     await _connection.commit()
 
 
@@ -96,3 +107,21 @@ async def reset_warnings(guild_id: int, user_id: int) -> None:
         (guild_id, user_id),
     )
     await _connection.commit()
+
+
+async def set_birthday(guild_id: int, user_id: int, day: int, month: int) -> None:
+    await _connection.execute(
+        """
+        INSERT INTO birthdays (guild_id, user_id, day, month) VALUES (?, ?, ?, ?)
+        ON CONFLICT (guild_id, user_id) DO UPDATE SET day = excluded.day, month = excluded.month
+        """,
+        (guild_id, user_id, day, month),
+    )
+    await _connection.commit()
+
+
+async def get_birthdays_on(day: int, month: int) -> list[tuple[int, int]]:
+    async with _connection.execute(
+        "SELECT guild_id, user_id FROM birthdays WHERE day = ? AND month = ?", (day, month)
+    ) as cursor:
+        return await cursor.fetchall()
