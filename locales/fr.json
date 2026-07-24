@@ -72,5 +72,7 @@
   "language.name.ko": "한국어",
   "language.set_confirmation": "Langue définie sur {language}.",
 
-  "cat.fetch_error": "Impossible de récupérer une photo de chat pour le moment, réessaie plus tard !"
+  "cat.fetch_error": "Impossible de récupérer une photo de chat pour le moment, réessaie plus tard !",
+
+  "poll.invalid_options": "Un sondage a besoin d'entre 2 et 10 options, séparées par des virgules."
 }

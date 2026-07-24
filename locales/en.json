@@ -72,5 +72,7 @@
   "language.name.ko": "한국어",
   "language.set_confirmation": "Language set to {language}.",
 
-  "cat.fetch_error": "Couldn't fetch a cat picture right now, try again later!"
+  "cat.fetch_error": "Couldn't fetch a cat picture right now, try again later!",
+
+  "poll.invalid_options": "A poll needs between 2 and 10 options, separated by commas."
 }

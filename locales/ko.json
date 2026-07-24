@@ -72,5 +72,7 @@
   "language.name.ko": "한국어",
   "language.set_confirmation": "언어가 {language}(으)로 설정되었어요.",
 
-  "cat.fetch_error": "지금은 고양이 사진을 가져올 수 없어요, 나중에 다시 시도해 주세요!"
+  "cat.fetch_error": "지금은 고양이 사진을 가져올 수 없어요, 나중에 다시 시도해 주세요!",
+
+  "poll.invalid_options": "설문조사는 쉼표로 구분된 2개에서 10개 사이의 항목이 필요해요."
 }

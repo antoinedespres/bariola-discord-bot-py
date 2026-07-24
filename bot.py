@@ -95,6 +95,7 @@ extensions = [
     'cogs.talk',
     'cogs.language',
     'cogs.cat',
+    'cogs.polls',
 ]
 
 
