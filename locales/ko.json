@@ -1,0 +1,74 @@
+{
+  "bot.ping.response": ":ping_pong: 퐁! {latency}ms 만에 반응했어요.",
+  "bot.vc.not_in_voice": "음성 채널에 접속해 있지 않아요!",
+
+  "talk.meow.0": "야오오옹 :smiley_cat:",
+  "talk.meow.1": "야옹!",
+  "talk.meow.2": "야오옹 (배고파요!)",
+  "talk.meow.3": "야옹 :heart_eyes_cat:",
+  "talk.meow.4": "Zzz...",
+
+  "talk.question.prefix": "질문: {question}\n\n대답: {answer}",
+  "talk.question.0": "꿈꾸고 있는 거예요...",
+  "talk.question.1": "확실해요.",
+  "talk.question.2": "네.",
+  "talk.question.3": "물론이죠!",
+  "talk.question.4": "아니요.",
+  "talk.question.5": "일이나 하세요!",
+  "talk.question.6": "절대 아니에요.",
+  "talk.question.7": "전혀요.",
+  "talk.question.8": "당연하죠!",
+  "talk.question.9": "글쎄요, 아닐 수도...",
+  "talk.question.10": "관심 없어요, 배고파요.",
+  "talk.question.11": "가짜 뉴스예요!",
+  "talk.question.12": "몰라요, 저는 그냥 고양이인걸요.",
+
+  "talk.feed.prefix": "제 생각: {opinion}",
+  "talk.feed.0": "별로 맛없었어요 :pouting_cat:",
+  "talk.feed.1": "냠! :joy_cat:",
+  "talk.feed.2": "그냥 배만 채워지네요...",
+  "talk.feed.3": "마음에 들어요 :smile_cat:!",
+  "talk.feed.4": "맛있어요 :kissing_cat:!",
+  "talk.feed.5": "너무 맛있어요 :heart_eyes_cat:!",
+
+  "talk.cute.0": "정말 친절하시네요!",
+  "talk.cute.1": "당신이 최고예요!",
+  "talk.cute.2": "정말 귀여우세요!",
+  "talk.cute.3": "다른 사람들에게는 없는 매력이 있어요!",
+  "talk.cute.4": "정말 멋지세요!",
+
+  "talk.notcute.0": "정어리보다 나을 게 없네요!",
+  "talk.notcute.1": "디스코드에서 고양이랑 얘기하는 걸 보니 많이 심심하신가 봐요...",
+  "talk.notcute.2": "조심해요, 할퀼 거예요!",
+  "talk.notcute.3": "*할퀴기* :pouting_cat:",
+
+  "talk.fact.0": "고양이는 하루의 70%는 잠을 자고 15%는 그루밍을 해요!",
+  "talk.fact.1": "우리의 청력은 인간보다 5배나 더 발달했어요!",
+  "talk.fact.2": "우리 코 주름 무늬는 사람의 지문처럼 모두 달라요!",
+  "talk.fact.3": "고양이는 자기 키의 5배 높이까지 뛰어오를 수 있어요!",
+  "talk.fact.4": "가르릉거리는 건 고양이만이 아니에요! 코끼리도 그렇답니다...",
+  "talk.fact.5": "고양이는 바닷물도 마실 수 있어요 (신장이 정말 튼튼하거든요)!",
+
+  "talk.cuddle.response": "그르릉! :smile_cat:",
+  "talk.discord.invite": "우리와 함께해요! https://discord.gg/tzt7Gx2 :smile_cat:",
+  "talk.randint.result": "결과: {result}",
+
+  "servermanagement.warning.issued": "{mention} 님에게 경고가 부여되었어요! 조심하세요 :pouting_cat:!",
+  "servermanagement.warning.kicked": "경고가 너무 많아서 서버에서 추방되었어요. 야옹 :pouting_cat:!",
+  "servermanagement.warning.bad_argument": "경고를 줄 서버 멤버를 정확히 멘션해 주세요.",
+  "servermanagement.kick.notice": "나쁘게 굴면 안 돼요! :pouting_cat:",
+  "servermanagement.ban.notice": "나쁘게 굴면 안 돼요! :pouting_cat:",
+
+  "greetings.member_join": "야옹, {mention}님 (환영해요)!",
+  "greetings.member_remove": "안녕히 가세요, {mention}님...",
+
+  "commandevents.command_not_found": "존재하지 않는 명령어예요!",
+  "commandevents.missing_argument": "하나 이상의 인자가 빠졌어요 :pouting_cat:!",
+
+  "misc.about": "저는 바리올라, 열 살 삼색 고양이예요.\n제 이름은 '화려하고 다채로운 색'이라는 뜻의 프랑스어 단어 'bariolé'에서 왔어요.\n저의 디지털 버전은 Antoine Després가 만들었어요.\n그의 다른 작품들과 제 소스 코드는 여기서 확인하세요: https://github.com/antoinedespres !",
+
+  "language.name.en": "English",
+  "language.name.fr": "Français",
+  "language.name.ko": "한국어",
+  "language.set_confirmation": "언어가 {language}(으)로 설정되었어요."
+}

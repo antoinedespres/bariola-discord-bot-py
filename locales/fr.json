@@ -1,0 +1,74 @@
+{
+  "bot.ping.response": ":ping_pong: Pong ! J'ai réagi en {latency} ms.",
+  "bot.vc.not_in_voice": "Tu n'es pas dans un salon vocal !",
+
+  "talk.meow.0": "Miaouuuu :smiley_cat:",
+  "talk.meow.1": "Miaou !",
+  "talk.meow.2": "Miaoouu (j'ai faim !)",
+  "talk.meow.3": "Miaou :heart_eyes_cat:",
+  "talk.meow.4": "Zzz...",
+
+  "talk.question.prefix": "Ta question : {question}\n\nMa réponse : {answer}",
+  "talk.question.0": "Tu rêves...",
+  "talk.question.1": "C'est sûr et certain.",
+  "talk.question.2": "Oui.",
+  "talk.question.3": "Bien sûr !",
+  "talk.question.4": "Non.",
+  "talk.question.5": "Retourne travailler !",
+  "talk.question.6": "Absolument pas.",
+  "talk.question.7": "Pas du tout.",
+  "talk.question.8": "Évidemment !",
+  "talk.question.9": "Peut-être, peut-être pas...",
+  "talk.question.10": "Je m'en fiche, j'ai faim.",
+  "talk.question.11": "FAUSSE NOUVELLE !",
+  "talk.question.12": "Je ne sais pas, je ne suis qu'un chat.",
+
+  "talk.feed.prefix": "Mon avis : {opinion}",
+  "talk.feed.0": "Ce n'était pas bon :pouting_cat:",
+  "talk.feed.1": "Miam ! :joy_cat:",
+  "talk.feed.2": "Bof, ça cale...",
+  "talk.feed.3": "J'aime bien :smile_cat: !",
+  "talk.feed.4": "Délicieux :kissing_cat: !",
+  "talk.feed.5": "C'est trop bon :heart_eyes_cat: !",
+
+  "talk.cute.0": "Tu es tellement gentil(le) !",
+  "talk.cute.1": "Tu es le/la meilleur(e) !",
+  "talk.cute.2": "Tu es trop mignon(ne) !",
+  "talk.cute.3": "Tu as des qualités que les autres n'ont pas !",
+  "talk.cute.4": "Tu as tellement de classe !",
+
+  "talk.notcute.0": "Tu ne vaux pas mieux qu'une sardine !",
+  "talk.notcute.1": "Tu dois vraiment t'ennuyer pour parler à un chat sur Discord...",
+  "talk.notcute.2": "Attention, je griffe !",
+  "talk.notcute.3": "*griffure* :pouting_cat:",
+
+  "talk.fact.0": "Nous les chats passons 70% de nos journées à dormir et 15% à faire notre toilette !",
+  "talk.fact.1": "Notre ouïe est cinq fois plus développée que celle des humains !",
+  "talk.fact.2": "Les motifs sur notre truffe sont uniques, comme les empreintes digitales humaines !",
+  "talk.fact.3": "Un chat peut sauter jusqu'à 5 fois sa propre hauteur !",
+  "talk.fact.4": "Les chats ne sont pas les seuls à ronronner ! Les éléphants aussi...",
+  "talk.fact.5": "Les chats peuvent boire de l'eau de mer (nos reins sont si résistants) !",
+
+  "talk.cuddle.response": "Rrr ! :smile_cat:",
+  "talk.discord.invite": "Rejoignez-nous ! https://discord.gg/tzt7Gx2 :smile_cat:",
+  "talk.randint.result": "Résultat : {result}",
+
+  "servermanagement.warning.issued": "{mention} a reçu un avertissement ! Attention :pouting_cat: !",
+  "servermanagement.warning.kicked": "Tu as été expulsé(e) du serveur pour trop d'avertissements. Miaou :pouting_cat: !",
+  "servermanagement.warning.bad_argument": "Merci de mentionner un membre valide du serveur à avertir.",
+  "servermanagement.kick.notice": "C'est pas bien d'être méchant ! :pouting_cat:",
+  "servermanagement.ban.notice": "C'est pas bien d'être méchant ! :pouting_cat:",
+
+  "greetings.member_join": "Miaou, {mention} (bienvenue) !",
+  "greetings.member_remove": "Au revoir, {mention}...",
+
+  "commandevents.command_not_found": "Cette commande n'existe pas !",
+  "commandevents.missing_argument": "Un ou plusieurs arguments sont manquants :pouting_cat: !",
+
+  "misc.about": "Je suis Bariola, une chatte tricolore de dix ans.\nMon nom vient du mot « bariolé », qui signifie « coloré de teintes vives et variées ».\nMa version numérique a été créée par Antoine Després.\nDécouvrez ses autres créations et mon code source sur : https://github.com/antoinedespres !",
+
+  "language.name.en": "English",
+  "language.name.fr": "Français",
+  "language.name.ko": "한국어",
+  "language.set_confirmation": "Langue définie sur {language}."
+}

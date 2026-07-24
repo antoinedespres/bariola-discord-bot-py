@@ -1,0 +1,74 @@
+{
+  "bot.ping.response": ":ping_pong: Pong! I reacted in {latency} ms.",
+  "bot.vc.not_in_voice": "You're not in a voice channel!",
+
+  "talk.meow.0": "Meoowwww :smiley_cat:",
+  "talk.meow.1": "Meow!",
+  "talk.meow.2": "Meoooow (I'm hungry!)",
+  "talk.meow.3": "Meow :heart_eyes_cat:",
+  "talk.meow.4": "Zzz...",
+
+  "talk.question.prefix": "Your question: {question}\n\nMy answer: {answer}",
+  "talk.question.0": "You're dreaming...",
+  "talk.question.1": "That's for sure.",
+  "talk.question.2": "Yes.",
+  "talk.question.3": "Of course!",
+  "talk.question.4": "No.",
+  "talk.question.5": "Go back to work!",
+  "talk.question.6": "Absolutely not.",
+  "talk.question.7": "Not at all.",
+  "talk.question.8": "Obviously!",
+  "talk.question.9": "Maybe, maybe not...",
+  "talk.question.10": "I don't care, I'm hungry.",
+  "talk.question.11": "FAKE NEWS!",
+  "talk.question.12": "I don't know, I'm just a cat.",
+
+  "talk.feed.prefix": "My opinion: {opinion}",
+  "talk.feed.0": "That wasn't good :pouting_cat:",
+  "talk.feed.1": "Yum! :joy_cat:",
+  "talk.feed.2": "Meh, it just fills in...",
+  "talk.feed.3": "I like it :smile_cat:!",
+  "talk.feed.4": "Delicious :kissing_cat:!",
+  "talk.feed.5": "It's so good :heart_eyes_cat:!",
+
+  "talk.cute.0": "You're so nice!",
+  "talk.cute.1": "You're the best!",
+  "talk.cute.2": "You're so cute!",
+  "talk.cute.3": "You have qualities that others don't!",
+  "talk.cute.4": "You're so classy!",
+
+  "talk.notcute.0": "You're no better than a sardine!",
+  "talk.notcute.1": "You must be pretty bored to be talking to a cat on Discord...",
+  "talk.notcute.2": "Watch out, I claw!",
+  "talk.notcute.3": "*scratch* :pouting_cat:",
+
+  "talk.fact.0": "We cats spend 70% of our days sleeping and 15% grooming!",
+  "talk.fact.1": "Our hearing is five times more developed than that of humans!",
+  "talk.fact.2": "The patterns on our snout are unique, like human fingerprints!",
+  "talk.fact.3": "A cat can jump at an altitude of up to 5 times its height!",
+  "talk.fact.4": "Cats aren't the only ones who purr! Elephants too...",
+  "talk.fact.5": "Cats are able to drink sea water (our kidneys are so strong)!",
+
+  "talk.cuddle.response": "Rrr! :smile_cat:",
+  "talk.discord.invite": "Join us! https://discord.gg/tzt7Gx2 :smile_cat:",
+  "talk.randint.result": "Result: {result}",
+
+  "servermanagement.warning.issued": "Member {mention} has received a warning! Beware :pouting_cat:!",
+  "servermanagement.warning.kicked": "You have been kicked of the server because of too many warnings. Meow :pouting_cat:!",
+  "servermanagement.warning.bad_argument": "Please mention a valid server member to warn.",
+  "servermanagement.kick.notice": "It's bad to be bad! :pouting_cat:",
+  "servermanagement.ban.notice": "It's bad to be bad! :pouting_cat:",
+
+  "greetings.member_join": "Meow, {mention} (welcome)!",
+  "greetings.member_remove": "Goodbye, {mention}...",
+
+  "commandevents.command_not_found": "Command does not exist!",
+  "commandevents.missing_argument": "One or several arguments missing :pouting_cat:!",
+
+  "misc.about": "I'm Bariola, a ten-year-old calico cat.\nMy name comes from the word \"bariolé\" (French) which means \"coloured in bright and varied tones\".\nThe digital version of me was created by Antoine Després.\nCheck out his other creations and my source code on: https://github.com/antoinedespres !",
+
+  "language.name.en": "English",
+  "language.name.fr": "Français",
+  "language.name.ko": "한국어",
+  "language.set_confirmation": "Language set to {language}."
+}
