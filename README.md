@@ -15,7 +15,7 @@ Commands work both as classic prefix commands (`$ping`) and as native Discord sl
 ## Local development
 
 1. Create a Discord Application and Bot at the [Discord Developer Portal](https://discord.com/developers/applications). Copy the bot token, and invite the bot to a private test server with the `bot` and `applications.commands` OAuth2 scopes (the latter is required for slash commands).
-2. Copy `.env.example` to `.env` and fill in `DISCORD_BOT_TOKEN`. Optionally set `DEV_GUILD_ID` to your test server's ID for fast slash-command sync during development.
+2. Copy `.env.example` to `.env` and fill in `DISCORD_BOT_TOKEN`. Optionally set `DEV_GUILD_ID` to your test server's ID for fast slash-command sync during development, and `DISCORD_CHANNEL_ID` to have the bot post a notice there each time it starts.
 3. `pip install -r requirements.txt`
 4. `python bot.py`
 5. In your test server, run the owner-only `sync` command (prefix-only, e.g. `$sync`) to push slash commands to your dev guild instantly. Use `$sync global` only when you want to ship the current command set to every server the bot is in (global syncs can take up to an hour to propagate).
@@ -27,7 +27,7 @@ Bariola ships as a Docker image built and deployed automatically by GitHub Actio
 **One-time VPS setup:**
 1. `mkdir -p ~/apps/bariola-discord-bot-py` on the VPS.
 2. Copy `docker-compose.yml` into that directory.
-3. `cp .env.example .env` in that directory and fill in `DISCORD_BOT_TOKEN`.
+3. `cp .env.example .env` in that directory and fill in `DISCORD_BOT_TOKEN`. Set `DISCORD_CHANNEL_ID` to get a startup notice after each deploy.
 4. `docker login ghcr.io` once, using a GitHub personal access token with `read:packages`.
 5. `docker compose pull && docker compose up -d`.
 

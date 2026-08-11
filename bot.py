@@ -1,4 +1,5 @@
 import asyncio
+import datetime
 from itertools import cycle
 
 import discord
@@ -43,10 +44,44 @@ status = cycle([discord.Status.dnd,
                 discord.Status.idle])
 
 
+_startup_announced = False
+
+
+async def announce_startup():
+    """Post a one-off "bot is up" notice, mirroring the vps-monitoring bot.
+
+    on_ready fires again on every gateway reconnect, so the flag keeps a flaky
+    connection from spamming the channel.
+    """
+    global _startup_announced
+    if _startup_announced or config.DISCORD_CHANNEL_ID is None:
+        return
+    _startup_announced = True
+
+    embed = discord.Embed(
+        title='\U0001F535 bariola started',
+        description='Deployment succeeded and the bot is now online.',
+        colour=0x3498DB,
+        timestamp=datetime.datetime.now(datetime.timezone.utc),
+    )
+    embed.add_field(name='Version', value=config.APP_VERSION, inline=True)
+    embed.add_field(name='Servers', value=str(len(bot.guilds)), inline=True)
+    embed.set_footer(text='bariola')
+
+    try:
+        channel = bot.get_channel(int(config.DISCORD_CHANNEL_ID))
+        if channel is None:
+            channel = await bot.fetch_channel(int(config.DISCORD_CHANNEL_ID))
+        await channel.send(embed=embed)
+    except (discord.HTTPException, ValueError) as exc:
+        print(f'Startup notice not sent: {exc}')
+
+
 @bot.event
 async def on_ready():
     change_status.start()
     print('I\'m ready!')
+    await announce_startup()
 
 
 @tasks.loop(minutes=5)
